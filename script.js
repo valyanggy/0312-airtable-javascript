@@ -29,3 +29,31 @@ const askQuestions = function () {
 // console.log(nameEl);
 
 askEl.addEventListener('click', askQuestions);
+
+
+// let cursor = document.querySelector('#light');
+
+// const onMouseMove = (e) =>{
+//    cursor.style.left = e.pageX - (cursor.clientWidth / 2) + 'px';
+//    cursor.style.top = e.pageY - (cursor.clientHeight / 2) + 'px';
+// }
+// document.addEventListener('mousemove', onMouseMove);
+
+let point = document.querySelector('.point'),
+    bg = document.querySelector('.bg');
+
+bg.addEventListener('mousemove', movePoint);
+
+function movePoint(e){
+  let x = e.clientX;
+  let y = e.clientY;
+  point.style.transform = `translate(${x - 50}px, ${y - 50}px)`;
+ 
+//   if (y < window.innerHeight/2) {
+//     point.style.background = 'rgb(200, 100, 200)';
+//     point.style.boxShadow = '0 0 50px 80px rgb(200, 100, 200)';
+//   } else {
+//     point.style.background = 'rgb(10, 2, 3)';
+//     point.style.boxShadow = '0 0 50px 80px rgb(10, 2, 3)'
+  }
+}

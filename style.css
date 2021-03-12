@@ -1,3 +1,117 @@
+:root {
+    --circle-diameter: 400px;
+ }
+ 
+ html {
+    background-color: #FFFF00;
+    font-size: 62.5%;
+    height: 100%;
+ }
+
+ body {
+    align-items: center;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: arial,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3rem;
+    
+    min-height: 100%;
+    padding: 0 3rem;
+    text-align: center;
+    text-transform: uppercase;
+	background: rgb(255, 255, 255);
+	background-size: 300% 300%;
+	animation: gradient 5s ease infinite;
+}
+
+.no-js .js {
+    display: none;
+    }
+
+#cursor {
+    animation: pulse 2s ease infinite alternate;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    display: none;
+    height: var(--circle-diameter);
+    left: -var(--circle-diameter);
+    mix-blend-mode: difference;
+    position: absolute;
+    top: -var(--circle-diameter);
+    transition: all 0.2s ease;
+    width: var(--circle-diameter);
+    z-index: 3;
+ }
+
+
+ #light{
+    animation: pulse 4s ease infinite alternate;
+    background-color: rgb(70, 216, 2);
+    border-radius: 50%;
+    height: var(--circle-diameter);
+    width: var(--circle-diameter);
+    filter: blur(60px);
+    z-index: 0;
+ }
+
+ @keyframes pulse {
+    from {
+       height: var(--circle-diameter);
+       width: var(--circle-diameter);
+    }
+    to {
+       height: calc(var(--circle-diameter) * 1.5);
+       width: calc(var(--circle-diameter) * 1.5);
+    }
+ }
+ 
+ 
+ @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+ }
+
+
 .hidden{
     display: none;
+}
+
+
+  .point {
+    height: 100px;
+    width:100px;
+    background-color: rgb(10, 2, 3);
+    box-shadow: 0 0 50px 80px rgb(10, 2, 3);
+    border-radius: 50px;
+    transition: 1s transform ease-in-out, 2s all;
+  }
+
+button{
+    background-color: black;
+    color: #ffffff;
+    font-family: presley-slab,serif;
+    font-weight: 300;
+    font-style: italic;
+    padding: 2rem 2rem;
+    line-height: 2;
+    text-transform: lowercase;
+    position: absolute;
+    top: 40%;
+    z-index: 1;
+}
+.link{
+    font-size: 2rem;
+    position: absolute;
+    top: 80%;
 }
